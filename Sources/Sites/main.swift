@@ -48,7 +48,7 @@ let confData = [
 		//	* Performs content compression on outgoing data when appropriate.
 		[
 			"name":"localhost",
-			"port":8181,
+			"port":8080,
 			"routes":[
 				["method":"get", "uri":"/", "handler":handler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,

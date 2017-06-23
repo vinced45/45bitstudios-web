@@ -1,28 +1,40 @@
-//
-//  Package.swift
-//  PerfectTemplate
-//
-//  Created by Kyle Jessup on 4/20/16.
-//	Copyright (C) 2016 PerfectlySoft, Inc.
-//
-//===----------------------------------------------------------------------===//
-//
-// This source file is part of the Perfect.org open source project
-//
-// Copyright (c) 2015 - 2016 PerfectlySoft Inc. and the Perfect project authors
-// Licensed under Apache License v2.0
-//
-// See http://perfect.org/licensing.html for license information
-//
-//===----------------------------------------------------------------------===//
-//
-
+// Generated automatically by Perfect Assistant Application
+// Date: 2017-06-23 20:08:38 +0000
 import PackageDescription
-
 let package = Package(
-	name: "PerfectTemplate",
-	targets: [],
+	name: "45bitstudios-web",
+	targets: [
+        Target(name: "Api",
+               dependencies: [
+                .Target(name: "Model"),
+                .Target(name: "Manager")
+            ]
+        ),
+        Target(name: "Cron",
+               dependencies: [
+                .Target(name: "Model"),
+                .Target(name: "Manager")
+            ]
+        ),
+        Target(name: "Manager",
+               dependencies: [
+                .Target(name: "Model"),
+            ]
+        ),
+        Target(name: "Model",
+               dependencies: []
+        ),
+        Target(name: "Sites",
+               dependencies: [
+                .Target(name: "Model"),
+                .Target(name: "Manager")
+            ]
+        ),
+    ],
 	dependencies: [
-		.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2)
-    ]
+		.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2),
+		.Package(url: "https://github.com/rymcol/SwiftCron.git", majorVersion: 0),
+		.Package(url: "https://github.com/PerfectlySoft/Perfect-PostgreSQL.git", majorVersion: 2, minor: 0),
+		.Package(url: "https://github.com/SwiftORM/Postgres-StORM.git", majorVersion: 1),
+	]
 )
